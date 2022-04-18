@@ -21,5 +21,13 @@ public class RicefwService {
 	public List<Master> getAllDomesticRicefwId(String region) {
 		return repository.findAllByRegion(region);
 	}
+	
+	public Master getMasterRicefwItem(String region, String ricefwId) {
+		return repository.findOneByRegionAndRicefwId(region, ricefwId);
+	}
+	
+	public Master save(Master master) {
+		return repository.save(master);
+	}
 
 }

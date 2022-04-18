@@ -13,5 +13,7 @@ public interface RicefwRepository extends CrudRepository<Master, Long> {
 	List<Master> findAll();
 	
 	List<Master> findAllByRegion(String region);
+	
+	Master findOneByRegionAndRicefwId(String region, String ricefwId);
 
 }
