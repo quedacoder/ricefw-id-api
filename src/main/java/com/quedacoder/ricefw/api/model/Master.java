@@ -15,18 +15,32 @@ public class Master {
 	private long id;
 	
 	private String ricefwId;
+	
+	// required
 	private String objectTitle;
+	
+	// required
 	private String ricefwDescription;
+	
+	// required
 	private String landscapeSystem;
 	private String processArea;
 	private String processAreaText;
+	
+	// required
 	private String objectType;
 	private String objectTypeText;
+	
+	// required
 	private String region;
+	
+	// required
 	private String originatingProject;
 	private String sourceSystem;
 	private String targetSystem;
 	private String middleware;
+	
+	// on selection screen
 	private String isApprovedByLeadPanel;
 	private String requestedBy;
 	private Date requestedOn;
@@ -36,7 +50,11 @@ public class Master {
 	private String respondedBy;
 	private Date respondedOn;
 	private String jiraId;
+	
+	// on creation screen
 	private String documentationUrl;
+	
+	// required
 	private String subProcessArea;
 	private String subProcessAreaText;
 	private String referenceId;

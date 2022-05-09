@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,6 +47,25 @@ public class RicefwController {
 		Master updatedMaster = ricefwService.save(master);
 		return new ResponseEntity<Master>(updatedMaster, HttpStatus.OK);
 		
+	}
+	
+	@PostMapping("/ricefw/api/domestic/masters")
+	public ResponseEntity<Void> createRicefwItem(@RequestBody Master master) {
+		
+		Master newMaster = ricefwService.createRicefwItem(master);
+		return null;
+	}
+	
+	@GetMapping("/ricefw/api/conversion")
+	public String getLastRicefwId() {
+		
+		String id = ricefwService.getLastConversionNumber();
+		
+	    int number = Integer.parseInt(id.substring(1, 6));
+	    
+	    String newNumber = String.format("C%05d", ++number);
+		
+		return newNumber;
 	}
 
 }
